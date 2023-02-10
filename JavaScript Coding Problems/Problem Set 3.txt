@@ -1,0 +1,32 @@
+
+-----Prefill an Array--------
+
+function prefill(n, v) {
+  if (isNaN(parseInt(n)) || n % 1 !== 0 || n < 0) {
+    throw new TypeError(`${n} is invalid`);
+  }
+  return Array.from({ length: n }).fill(v);
+}
+
+-----Closures and Scopes----
+
+function createFunctions(n) {
+
+  const callbacks = [];
+
+  for (let i=0; i<n; i++) {
+    callbacks.push(() => i);
+  }
+  
+  return callbacks;
+}
+-------Can you keep a secret?----
+
+function createSecretHolder(secret) {
+  
+ return {
+    getSecret: function() { return secret; },
+    setSecret: function(v) { secret = v; }
+  };
+
+}
